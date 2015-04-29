@@ -5,8 +5,8 @@
   
   <title>基础设置 | fe规范</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="/tb_fe_component/css/style.css" type="text/css">
-  <link href="/tb_fe_component/" />
+  <link rel="stylesheet" href="/test/css/style.css" type="text/css">
+  <link href="/test/" />
 </head>
 
 <body>
@@ -19,13 +19,13 @@
         <a class="main-nav-link" href="/">Home</a>
       
       
-       <a class="main-nav-link" href="/tb_fe_component/2015/04/21/base/">基础设置</a>
+       <a class="main-nav-link" href="/test/2015/04/21/base/">基础设置</a>
       
-       <a class="main-nav-link" href="/tb_fe_component/2015/04/21/tieba_component/">业务组件</a>
+       <a class="main-nav-link" href="/test/2015/04/21/tieba_component/">业务组件</a>
       
-       <a class="main-nav-link" href="/tb_fe_component/2015/04/21/base_component/">组件</a>
+       <a class="main-nav-link" href="/test/2015/04/21/base_component/">组件</a>
       
-       <a class="main-nav-link" href="/tb_fe_component/2015/04/21/script_component/">js组件</a>
+       <a class="main-nav-link" href="/test/2015/04/21/script_component/">js组件</a>
       
     </nav>
     <nav id="sub-nav">
@@ -82,20 +82,45 @@
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.pull-left</span>(); <span class="comment">//or .pull-right();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="清除浮动">清除浮动</h3><p>通过为<code>父元素</code>添加 .clearfix 类可以很容易地清除浮动（float）。此类还可以作为 mixin 使用。</p><br><em>   通过添加<code>.clearfix</code>类<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"clearfix"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="清除浮动">清除浮动</h3><p>通过为<code>父元素</code>添加 .clearfix 类可以很容易地清除浮动（float）。此类还可以作为 mixin 使用。</p>
 
-</em>   通过调用<code>.clearfix</code> mixins<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.clearfix</span>(); <span class="comment">//or .pull-right();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>###图片替换###<br>使用<code>.hide_text</code>类或对应的mixin可以用来将元素的文本内容替换为一张背景图。<p></p><br><em>   方法一：通过添加<code>.hide_text</code>类<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"hide_text"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-</em>   方法二：通过调用<code>.hide_text</code> mixins<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.hide-text</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>###文字省略###<br><em>   方法一：通过添加<code>.text_overflow</code>, text_overflow文字省略设置在dispaly： block或者dispaly<br>&gt; 注意：.text_overflow类只是支持一行省略<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"text_overflow"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
-
-</em>   方法二：使用mixins .text-overflow(…)<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.text-overflow</span>(); </span><br><span class="line">&#125;</span><br><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.text-overflow</span>(<span class="number">2</span>); <span class="comment">// 传入参数，仅支持webkit，表示第几行省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>##button##<br>跨浏览器展现<br><br>据bootstrap的介绍，<strong>强烈建议尽可能使用 <code>&lt;button&gt;</code>元素</strong>来获得在各个浏览器上获得相匹配的绘制效果。<br><br>同时，如果并排按钮，建议使用同类型的标签，禁止lineheight的设置，因为在不同类型的按钮中，高度获取不一致<br><br>##可以作为按钮使用的标签和元素##<br><br>为 <code>&lt;a&gt;</code>、<code>&lt;button&gt;</code>、<code>&lt;input type=&quot;submit&quot;&gt;</code>、<code>&lt;input type=&quot;button&quot;&gt;</code>或 <code>&lt;input type=&quot;reset&quot;&gt;</code>元素添加按钮类（button class）即可使用 基础库 提供的样式。<p></p>
-
+<ul>
+<li>通过添加<code>.clearfix</code>类</li>
+</ul>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"clearfix"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过调用<code>.clearfix</code> mixins</li>
+</ul>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.clearfix</span>(); <span class="comment">//or .pull-right();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="图片替换">图片替换</h3><p>使用<code>.hide_text</code>类或对应的mixin可以用来将元素的文本内容替换为一张背景图。</p><p></p>
+<ul>
+<li>方法一：通过添加<code>.hide_text</code>类</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"hide_text"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法二：通过调用<code>.hide_text</code> mixins</li>
+</ul>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.hide-text</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="文字省略">文字省略</h3><ul>
+<li>方法一：通过添加<code>.text_overflow</code>, text_overflow文字省略设置在dispaly： block或者dispaly</li>
+</ul>
+<blockquote>
+<p>注意：.text_overflow类只是支持一行省略</p>
+</blockquote>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"text_overflow"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法二：使用mixins .text-overflow(…)</li>
+</ul>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.text-overflow</span>(); </span><br><span class="line">&#125;</span><br><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.text-overflow</span>(<span class="number">2</span>); <span class="comment">// 传入参数，仅支持webkit，表示第几行省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="button">button</h2><p>跨浏览器展现</p>
+<p>据bootstrap的介绍，<strong>强烈建议尽可能使用 <code>&lt;button&gt;</code>元素</strong>来获得在各个浏览器上获得相匹配的绘制效果。</p>
+<p>同时，如果并排按钮，建议使用同类型的标签，禁止lineheight的设置，因为在不同类型的按钮中，高度获取不一致</p>
+<h2 id="可以作为按钮使用的标签和元素">可以作为按钮使用的标签和元素</h2><p>为 <code>&lt;a&gt;</code>、<code>&lt;button&gt;</code>、<code>&lt;input type=&quot;submit&quot;&gt;</code>、<code>&lt;input type=&quot;button&quot;&gt;</code>或 <code>&lt;input type=&quot;reset&quot;&gt;</code>元素添加按钮类（button class）即可使用 基础库 提供的样式。</p><p></p>
 <h2 id="预定义样式">预定义样式</h2><p>在预定义样式中，<br>提供了<strong>四种样式</strong>类: <em>.btn_default</em>、<em>.btn_default</em>、<em>.btn_default</em>、<em>.btn_default</em><br>提供了<strong>三种尺寸</strong>类: <em>.btn_small</em>、<em>.btn_middle</em>、<em>.btn_larger</em><br>这四种样式和尺寸可以随意搭配使用。</p>
-<h3 id="demo—样式">demo—样式</h3><p><iframe height="268" scrolling="no" src="//codepen.io/yuanzhen/embed/YPMaar/?height=268&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/YPMaar/" target="_blank" rel="external">YPMaar</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe><br>代码：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_default btn_small"</span> &gt;</span>常用蓝色(.btn_default)<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_attention btn_small"</span> &gt;</span>关注(.btn_attention)<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_sub btn_small"</span> &gt;</span>副按钮(.btn_sub)<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_disable btn_small"</span> &gt;</span>不可用按钮(.btn_disable)<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="demo—尺寸">demo—尺寸</h3><p><button class="btn_default btn_small">常用尺寸(.btn_small)</button> </p>
-<p><button class="btn_default btn_middle">中按钮(.btn_middle)</button> </p>
-<p><button class="btn_default btn_larger">大按钮(.btn_larger)</button><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_default btn_small"</span> &gt;</span>常用尺寸(.btn_small)<span class="tag">&lt;/<span class="title">button</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_default btn_middle"</span> &gt;</span>中按钮(.btn_middle)<span class="tag">&lt;/<span class="title">button</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_default btn_larger"</span> &gt;</span>大按钮(.btn_larger)<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="自定义按钮">自定义按钮</h2><p>自定义按钮提供了以下两种mixins</p>
+<h3 id="demo—样式">demo—样式</h3><iframe height="249" scrolling="no" src="//codepen.io/yuanzhen/embed/YPMaar/?height=249&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/YPMaar/" target="_blank" rel="external">YPMaar</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe><br>代码：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_default btn_small"</span> &gt;</span>常用蓝色(.btn_default)<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_attention btn_small"</span> &gt;</span>关注(.btn_attention)<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_sub btn_small"</span> &gt;</span>副按钮(.btn_sub)<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_disable btn_small"</span> &gt;</span>不可用按钮(.btn_disable)<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>###demo—尺寸###<br><button class="btn_default btn_small">常用尺寸(.btn_small)</button><br><button class="btn_default btn_middle">中按钮(.btn_middle)</button><br><button class="btn_default btn_larger">大按钮(.btn_larger)</button><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_default btn_small"</span> &gt;</span>常用尺寸(.btn_small)<span class="tag">&lt;/<span class="title">button</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_default btn_middle"</span> &gt;</span>中按钮(.btn_middle)<span class="tag">&lt;/<span class="title">button</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_default btn_larger"</span> &gt;</span>大按钮(.btn_larger)<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>##自定义按钮##<br><br>以下是demo展示<br><iframe height="117" scrolling="no" src="//codepen.io/yuanzhen/embed/RNmjyZ/?height=117&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/RNmjyZ/" target="_blank" rel="external">RNmjyZ</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<p>使用方式：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.btn-variant</span>(...); <span class="comment">//or btn-styles(); 设置背景颜色，文字颜色或者border色值，参数请看下面的mixins </span></span><br><span class="line">    <span class="class">.btn-size</span>(...); <span class="comment">//设置盒模型大小和字体大小, 参数请看下面的mixins</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>自定义按钮提供了以下两种样式mixins</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//纯色背景</span></span><br><span class="line"><span class="class">.btn-variant</span>(<span class="variable">@color</span>, <span class="variable">@bg-color</span>, <span class="variable">@border-color</span>, <span class="variable">@hover-color</span>, <span class="variable">@hover-bg-color</span>, <span class="variable">@hover-border-color</span>)&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//渐变背景</span></span><br><span class="line"><span class="class">.btn-styles</span>(<span class="variable">@color</span>: <span class="hexcolor">#fff</span>, <span class="variable">@btn-color</span>: <span class="hexcolor">#555</span>) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//@padding-vertical: btn上下间距 </span></span><br><span class="line"><span class="comment">//@padding-horizontal: btn横向间距 </span></span><br><span class="line"><span class="comment">//@line-height: btn字体大小</span></span><br><span class="line"><span class="comment">//@font-size: btn字体大小</span></span><br><span class="line"><span class="comment">//@border-radius: btn圆角</span></span><br><span class="line"><span class="class">.btn-size</span>(<span class="variable">@padding-vertical</span>, <span class="variable">@padding-horizontal</span>, <span class="variable">@line-height</span>, <span class="variable">@font-size</span>, <span class="variable">@border-radius</span>) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>自定义按钮是以btn为基础，</p>
 <ul>
@@ -118,7 +143,7 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_sub btn_small btn_with_icon"</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon_attention"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>关注<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_attention btn_small btn_with_icon"</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon_attention"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>关注<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">.btn_with_icon&#123;</span><br><span class="line">    padding-left: 24px;</span><br><span class="line">    .icon_attention&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        &amp;::before&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           <div class="page-toc">
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#entry-css"><span class="toc-number">1.</span> <span class="toc-text">entry.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normalize-css/reset-css"><span class="toc-number">2.</span> <span class="toc-text">Normalize.css/reset.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utility"><span class="toc-number">3.</span> <span class="toc-text">utility</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文本色值块"><span class="toc-number">3.1.</span> <span class="toc-text">文本色值块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#float"><span class="toc-number">3.2.</span> <span class="toc-text">float</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#清除浮动"><span class="toc-number">3.3.</span> <span class="toc-text">清除浮动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预定义样式"><span class="toc-number">4.</span> <span class="toc-text">预定义样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#demo—样式"><span class="toc-number">4.1.</span> <span class="toc-text">demo—样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#demo—尺寸"><span class="toc-number">4.2.</span> <span class="toc-text">demo—尺寸</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义按钮"><span class="toc-number">5.</span> <span class="toc-text">自定义按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#带icon的按钮"><span class="toc-number">6.</span> <span class="toc-text">带icon的按钮</span></a></li></ol> 
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#entry-css"><span class="toc-number">1.</span> <span class="toc-text">entry.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normalize-css/reset-css"><span class="toc-number">2.</span> <span class="toc-text">Normalize.css/reset.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utility"><span class="toc-number">3.</span> <span class="toc-text">utility</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文本色值块"><span class="toc-number">3.1.</span> <span class="toc-text">文本色值块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#float"><span class="toc-number">3.2.</span> <span class="toc-text">float</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#清除浮动"><span class="toc-number">3.3.</span> <span class="toc-text">清除浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片替换"><span class="toc-number">3.4.</span> <span class="toc-text">图片替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文字省略"><span class="toc-number">3.5.</span> <span class="toc-text">文字省略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#button"><span class="toc-number">4.</span> <span class="toc-text">button</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可以作为按钮使用的标签和元素"><span class="toc-number">5.</span> <span class="toc-text">可以作为按钮使用的标签和元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预定义样式"><span class="toc-number">6.</span> <span class="toc-text">预定义样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#demo—样式"><span class="toc-number">6.1.</span> <span class="toc-text">demo—样式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#带icon的按钮"><span class="toc-number">7.</span> <span class="toc-text">带icon的按钮</span></a></li></ol> 
           </div>
         
     </div>
@@ -127,7 +152,7 @@
     
 <nav id="article-nav">
   
-    <a href="/tb_fe_component/2015/04/21/tieba_component/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/test/2015/04/21/tieba_component/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -137,7 +162,7 @@
     </a>
   
   
-    <a href="/tb_fe_component/2015/04/21/base_component/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/test/2015/04/21/base_component/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">组件</div>
     </a>
@@ -170,22 +195,22 @@
 
 <script>
 (function(){
-    var styleList = ["tb_common", "tb_ui"]
-    for (var i = 0; i < styleList.length; i++ ){
-        var link = document.createElement('link');
-        link.type = "text/css";
-        lik.rel = "stylesheet";
-        link.href = "http://tb1.bdstatic.com/tb/static-common/style/" + styleList[i] + ".css?time=" + new Date().getTime();
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(link);
-    }
+   // var styleList = ["tb_common", "tb_ui"]
+   // for (var i = 0; i < styleList.length; i++ ){
+   //     var link = document.createElement('link');
+   //     link.type = "text/css";
+   //     lik.rel = "stylesheet";
+   //     link.href = "http://tb1.bdstatic.com/tb/static-common/style/" + styleList[i] + ".css?time=" + new Date().getTime();
+   //     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(link);
+   // }
 })();
 </script>
 
-<script src="/tb_fe_component/js/jquery.min.js"></script>
+<script src="/test/js/jquery.min.js"></script>
 
 
 
-<script src="/tb_fe_component/js/script.js" type="text/javascript"></script>
+<script src="/test/js/script.js" type="text/javascript"></script>
 
   </div>
 </body>
