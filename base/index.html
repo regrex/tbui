@@ -16,7 +16,7 @@
     <nav id="main-nav">
       <a id="main-nav-toggle" class="nav-icon"></a>
       
-        <a class="main-nav-link" href="/">Home</a>
+        <a class="main-nav-link" href="/tb_fe_component">Home</a>
       
       
        <a class="main-nav-link" href="/tb_fe_component/base/">基础设置</a>
@@ -51,17 +51,6 @@
       <div class="article-main">
         <div class="main"><article id="post-base" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      基础设置
-    </h1>
-  
-
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
         
@@ -125,7 +114,10 @@
 </blockquote>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">* @lists： 合并的iconlist</span><br><span class="line">*/</span></span><br><span class="line"><span class="class">.icon_sprite_single</span>(<span class="variable">@list</span>);</span><br><span class="line"><span class="comment">//使用如下</span></span><br><span class="line"><span class="variable">@my_list:</span> <span class="string">"demo1"</span>, <span class="string">"demo2"</span>, <span class="string">"demo3"</span>;</span><br><span class="line"><span class="class">.icon_sprite_mixins</span>(<span class="variable">@my_list</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//最后生成: </span></span><br><span class="line"><span class="comment">// .icon-demo1&#123;background: url('images/icon_demo1.png?__sprite')&#125;</span></span><br><span class="line"><span class="comment">// .icon-demo2&#123;background: url('images/icon_demo2.png?__sprite')&#125;</span></span><br><span class="line"><span class="comment">// .icon-demo3&#123;background: url('images/icon_demo3.png?__sprite')&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="opacity">opacity</h3><blockquote>
-<p>使用方式，具体参见链接<br><a href="http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less" target="_blank" rel="external">.opacity(.5)</a><br><a href="http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less" target="_blank" rel="external">.background-opacity(#fff, .5)</a></p>
+<p>使用方式，具体参见<a href="http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less" target="_blank" rel="external">链接</a><br>opacity设置: .opacity(.5)<br>rgba透明设置: .background-opacity(#fff, .5)</p>
+</blockquote>
+<h3 id="渐变">渐变</h3><blockquote>
+<p>使用方式，具体参见<a href="http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/gradient.less" target="_blank" rel="external">链接</a><br>从左到右横向linear渐变： #gradient .horizontal(@star-color, @end-color, @start-percent, @end-persent);<br>从上到下纵向linear渐变： #gradient .vertical(@star-color, @end-color, @start-percent, @end-persent);<br>径向渐变： #gradient .directional(@deg, @start-color, @end-color);</p>
 </blockquote>
 <h2 id="button">button</h2><p>跨浏览器展现</p>
 <p>据bootstrap的介绍，<strong>强烈建议尽可能使用 <code>&lt;button&gt;</code>元素</strong>来获得在各个浏览器上获得相匹配的绘制效果。</p>
@@ -160,16 +152,14 @@
 </li>
 </ul>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span> <span class="keyword">value</span>=<span class="string">"test"</span>/ <span class="keyword">class</span>=<span class="string">"btn my_btn"</span>&gt;</span><br><span class="line"></span><br><span class="line">.my_btn&#123;</span><br><span class="line">   .btn-styles(<span class="preprocessor">#fff, #555);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="带icon的按钮">带icon的按钮</h3><p>使用<code>&lt;i&gt;</code>表示icon, 样式由用户自己定义，可以使用sprite图片，同时可以使用iconfont</p><p></p>
-<ul>
-<li>如果使用sprite图片, 使用了icon::before绝对定位的方式，原因是: 为了浏览器兼容性，使用padding值实现了btn的垂直尺寸，如果icon图片尺寸超出12px，会出现btn被撑高<p></p></li>
-<li>如果使用sprite图片, icon::before, Ie8及之下不支持，如果需要兼容到ie8，请在外层容器btn_with_icon设置relative属性<p></p></li>
-</ul>
-<p>暂时还确实iconfont，之后会补充</p><p></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_sub btn_small btn_with_icon"</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon_attention"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>关注<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_attention btn_small btn_with_icon"</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon_attention"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>关注<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">.btn_with_icon&#123;</span><br><span class="line">    padding-left: 24px;</span><br><span class="line">    .icon_attention&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        &amp;::before&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="带icon的按钮">带icon的按钮</h3><p>使用<code>&lt;i class=&quot;icon_*&quot;&gt;&lt;/i&gt;</code>表示icon, 样式由用户自己定义，可以使用sprite图片，同时可以使用iconfont</p>
+<blockquote>
+<p><strong>注意：</strong><br>尽量是icon的尺寸和文字的尺寸保持一致，例如文字是14px，那么icon也也设置为14px;<br>使用vertical-align: middle 和 <a href="http://snook.ca/archives/html_and_css/icons-and-type" target="_blank" rel="external">margin-top: -.1em</a>; 使icon居中对齐</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_sub btn_small"</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon_attention"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>关注<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn_attention btn_small"</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon_attention"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>关注<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">.icon_attention&#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    width: 12px;</span><br><span class="line">    height: 12px;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    margin-top: -.1em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           <div class="page-toc">
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#entry-css"><span class="toc-number">1.</span> <span class="toc-text">entry.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normalize-css/reset-css"><span class="toc-number">2.</span> <span class="toc-text">Normalize.css/reset.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utility"><span class="toc-number">3.</span> <span class="toc-text">utility</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文本色值块"><span class="toc-number">3.1.</span> <span class="toc-text">文本色值块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#float"><span class="toc-number">3.2.</span> <span class="toc-text">float</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#清除浮动"><span class="toc-number">3.3.</span> <span class="toc-text">清除浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片替换"><span class="toc-number">3.4.</span> <span class="toc-text">图片替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文字省略"><span class="toc-number">3.5.</span> <span class="toc-text">文字省略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并icon，"><span class="toc-number">3.6.</span> <span class="toc-text">合并icon，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#opacity"><span class="toc-number">3.7.</span> <span class="toc-text">opacity</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#button"><span class="toc-number">4.</span> <span class="toc-text">button</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作为按钮的元素"><span class="toc-number">4.1.</span> <span class="toc-text">作为按钮的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预定义样式"><span class="toc-number">4.2.</span> <span class="toc-text">预定义样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义按钮"><span class="toc-number">4.3.</span> <span class="toc-text">自定义按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#带icon的按钮"><span class="toc-number">4.4.</span> <span class="toc-text">带icon的按钮</span></a></li></ol></li></ol> 
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#entry-css"><span class="toc-number">1.</span> <span class="toc-text">entry.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normalize-css/reset-css"><span class="toc-number">2.</span> <span class="toc-text">Normalize.css/reset.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utility"><span class="toc-number">3.</span> <span class="toc-text">utility</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文本色值块"><span class="toc-number">3.1.</span> <span class="toc-text">文本色值块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#float"><span class="toc-number">3.2.</span> <span class="toc-text">float</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#清除浮动"><span class="toc-number">3.3.</span> <span class="toc-text">清除浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片替换"><span class="toc-number">3.4.</span> <span class="toc-text">图片替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文字省略"><span class="toc-number">3.5.</span> <span class="toc-text">文字省略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并icon，"><span class="toc-number">3.6.</span> <span class="toc-text">合并icon，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#opacity"><span class="toc-number">3.7.</span> <span class="toc-text">opacity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渐变"><span class="toc-number">3.8.</span> <span class="toc-text">渐变</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#button"><span class="toc-number">4.</span> <span class="toc-text">button</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作为按钮的元素"><span class="toc-number">4.1.</span> <span class="toc-text">作为按钮的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预定义样式"><span class="toc-number">4.2.</span> <span class="toc-text">预定义样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义按钮"><span class="toc-number">4.3.</span> <span class="toc-text">自定义按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#带icon的按钮"><span class="toc-number">4.4.</span> <span class="toc-text">带icon的按钮</span></a></li></ol></li></ol> 
           </div>
         
     </div>
@@ -214,7 +204,7 @@
 </footer>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/tb_fe_component" class="mobile-nav-link">Home</a>
   
 </nav>
     
