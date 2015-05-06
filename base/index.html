@@ -58,17 +58,24 @@
 </ul>
 <h2 id="normalize-css/reset-css"><a href="https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility" target="_blank" rel="external">normalize.css/reset.css</a></h2><p>统一浏览器一致性，其中 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。<br>reset.css是符合贴吧业务具体需求的重置样式</p>
 <h2 id="font"><a href="http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less" target="_blank" rel="external">font</a></h2><ul>
-<li>font-size: .font-size-12(), .font-size-14(), .font-size-16(), .font-size-20();</li>
-<li>font-family</li>
+<li><p>font-size </p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.font-size-12</span>(); <span class="comment">// =&gt; font-size: 12px;</span></span><br><span class="line"><span class="class">.font-size-14</span>(); <span class="comment">// =&gt; font-size: 14px;</span></span><br><span class="line"><span class="class">.font-size-16</span>(); <span class="comment">// =&gt; font-size: 16px;</span></span><br><span class="line"><span class="class">.font-size-20</span>(); <span class="comment">// =&gt; font-size: 20px;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>font-family</p>
+</li>
 </ul>
-<blockquote>
-<p>.font-family-sans-serif(); //非衬线字体<br>.font-family-serif(); //衬线字体<br>.font-family-yahei(); //微软雅黑<br>.font-family-mono(); //monospace</p>
-</blockquote>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.font-<span class="keyword">family</span>-sans-serif(); // =&gt; font-<span class="keyword">family</span>: <span class="string">"Helvetica Neue"</span>, <span class="type">Helvetica</span>, <span class="type">Arial</span>, sans-serif; 非衬线字体</span><br><span class="line">.font-<span class="keyword">family</span>-serif(); // =&gt; font-<span class="keyword">family</span>: <span class="type">Georgia</span>, <span class="string">"Times New Roman"</span>, <span class="type">Times</span>, serif; 衬线字体</span><br><span class="line">.font-<span class="keyword">family</span>-mono(); // =&gt; font-<span class="keyword">family</span>: <span class="type">Menlo</span>, <span class="type">Monaco</span>, <span class="type">Consolas</span>, <span class="string">"Courier New"</span>, monospace;  </span><br><span class="line">.font-<span class="keyword">family</span>-yahei(); // =&gt; font-<span class="keyword">family</span>: <span class="string">"microsoft yahei"</span> simhei sans-serif;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>ling-height: .line-height-22(), .line-height-26();</li>
-<li>font-weight: .font-weight-normal(); .font-weight-bold();</li>
-<li>链接颜色设置： .a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color);</li>
-<li>链接下划线设置： .a-decoration(@link: none; @hover: underline);</li>
+<li><p>ling-height: </p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.line-height-22</span>(); <span class="comment">// =&gt; line-height: 22px;</span></span><br><span class="line"><span class="class">.line-height-26</span>(); <span class="comment">// =&gt; line-height: 26px;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>font-weight:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.font-weight-normal</span>(); <span class="comment">// =&gt; font-weight: normal; </span></span><br><span class="line"><span class="class">.font-weight-bold</span>(); <span class="comment">// =&gt; font-weight: bold;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>链接颜色设置： .a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color);</p>
+</li>
+<li><p>链接下划线设置： .a-decoration(@link: none; @hover: underline);</p>
+</li>
 </ul>
 <h2 id="utility"><a href="">utility</a></h2><blockquote>
 <p>包含两部分， 一部分是以<a href="https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less" target="_blank" rel="external"><code>class</code></a>形式引入， 另一部分是以<a href="http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less" target="_blank" rel="external"><code>mixins</code></a>形式引入</p>
