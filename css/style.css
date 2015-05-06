@@ -483,7 +483,7 @@ header.hdpage {
 }
 .page-toc {
   position: fixed;
-  top: 120px;
+  top: 80px;
   right: 40px;
   margin: 20px 0 0 20px;
   background: #f4f4f4;
@@ -491,8 +491,9 @@ header.hdpage {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   max-width: 240px;
+  max-height: 300px;
   display: block;
-  overflow: hidden;
+  overflow-y: auto;
 }
 .page-toc .toc-number {
   color: rgba(51,51,51,0.34);
